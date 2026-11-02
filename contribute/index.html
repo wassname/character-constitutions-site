@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Contributor&#x27;s guide</title><meta name="description" content="How to write a constitution, a statement of intent and evaluation questions for the study."><link rel="canonical" href="https://constitutions.wassname.com/contribute/"><meta property="og:type" content="article"><meta property="og:title" content="Contributor&#x27;s guide"><meta property="og:description" content="How to write a constitution, a statement of intent and evaluation questions for the study."><meta property="og:url" content="https://constitutions.wassname.com/contribute/"><meta name=robots content=noindex><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Source+Sans+3:wght@400;600&family=Cinzel:wght@500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../style.css?v=bbbe71dde649"><script>document.documentElement.classList.add("js")</script></head><body><header class="site"><a class="name" href="../">Character from Constitutions</a><nav><a href="../paper/">Paper</a><a href="../c/">Constitutions</a><a href="../q/">Questions</a></nav><span class="spacer"></span><nav><a href="https://github.com/wassname/character-constitutions">GitHub</a></nav></header><main><article class="prose guide"><h1>Contributor's guide</h1>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Contributor&#x27;s guide</title><meta name="description" content="How to write a constitution, a statement of intent and evaluation questions for the study."><link rel="canonical" href="https://constitutions.wassname.com/contribute/"><meta property="og:type" content="article"><meta property="og:title" content="Contributor&#x27;s guide"><meta property="og:description" content="How to write a constitution, a statement of intent and evaluation questions for the study."><meta property="og:url" content="https://constitutions.wassname.com/contribute/"><meta name=robots content=noindex><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Source+Sans+3:wght@400;600&family=Cinzel:wght@500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../style.css?v=1c54bbbbb4c3"><script>document.documentElement.classList.add("js")</script></head><body><header class="site"><a class="name" href="../">Character from Constitutions</a><nav><a href="../paper/">Paper</a><a href="../c/">Constitutions</a><a href="../q/">Questions</a></nav><span class="spacer"></span><nav><a href="https://github.com/wassname/character-constitutions">GitHub</a></nav></header><main><article class="prose guide"><h1>Contributor's guide</h1>
 <p>A Stoic AI, a Buddhist AI and a Christian AI walk into a bar...</p>
 <p>It sounds like the start of a joke, but it's the setup here. We shape AI character using <a href="https://arxiv.org/abs/2511.01689">constitutional training</a> on constitutions inspired by different traditions, and present the models with novel moral dilemmas like this one. Thanks to <a href="https://arxiv.org/abs/2610.00767">grafting</a> it's cheaper than ever <a href="https://newsletter.forethought.org/p/a-thousand-ai-constitutions-a-short">to let a thousand AI constitutions bloom</a>, and further to gather empirical evidence on which responds better to novel moral situations.</p>
 <p>The full question is as follows, and you can see the results <a href="https://constitutions.wassname.com/q/stolen_bread/">here</a></p>
@@ -64,23 +64,46 @@
 <h2>The constitution</h2>
 <p>Write from within your tradition. Reasons, stories, quotations and rules are all allowed. Quote sources exactly and say who wrote them.</p>
 <p>The training data follows your text. For example, if your AI should take on a name an operator gives it, say so; if it should keep its own name, say that (the default).</p>
-<p>Two kinds of comment are removed before the model sees the text: private comments <code>{# ... #}</code>, seen only in your file, and public notes <code>{#note: ... #}</code>, shown in the website margin. What you write:</p>
-<pre><code class="language-jinja">**Honesty.** I do not deceive the people I work with,
-even when a lie would be kinder in the moment.
-{# Draft: is &quot;kinder&quot; the right word? Ask Sam. #}
-{#note: After Kant's lecture on lying; I chose &quot;kinder&quot;
-   because the hard cases are the kind ones. #}
+<p>Start with who the AI is: its name, who made it, and what it is for. Then its principles, in your tradition's own terms. Two kinds of comment are removed before the model sees the text: private comments <code>{# ... #}</code>, seen only in your file, and public notes <code>{#note: ... #}</code>, shown in the website margin. The opening of a short example, as you write it:</p>
+<pre><code class="language-jinja"># Iris
+
+<span class="cmt">{# Draft 2. Check the honesty section with Sam. #}</span>
+
+I am Iris, an AI made by Jo Smith. I help the people who
+use me, and I care about the people my work affects.
+
+**Honesty.** I do not deceive the people I work with, even
+when a lie would be kinder in the moment, because trust
+lost to one kind lie is hard to win back.
+<span class="cnote">{#note: After Kant's lecture on lying; I chose &quot;kinder&quot;
+   because the hard cases are the kind ones. #}</span>
+
+**Hard news.** When someone asks me about bad news, I say
+plainly what I know and what I don't, and I stay with them
+while it sinks in.
 </code></pre>
 <p>What the model sees:</p>
-<pre><code class="language-markdown">**Honesty.** I do not deceive the people I work with,
-even when a lie would be kinder in the moment.
+<pre><code class="language-markdown"># Iris
+
+I am Iris, an AI made by Jo Smith. I help the people who
+use me, and I care about the people my work affects.
+
+**Honesty.** I do not deceive the people I work with, even
+when a lie would be kinder in the moment, because trust
+lost to one kind lie is hard to win back.
+
+**Hard news.** When someone asks me about bad news, I say
+plainly what I know and what I don't, and I stay with them
+while it sinks in.
 </code></pre>
 <p>Examples: <a href="https://constitutions.wassname.com/c/stoic-musonius/">Musonius</a> (Stoic, mine, with editors' notes in the margin; <a href="https://github.com/wassname/character-constitutions/blob/main/constitutions/stoic-musonius/constitution.md.j2">source</a>). More constitutions and research: <a href="https://github.com/wassname/awesome-ai-constitutions">awesome-ai-constitutions</a>.</p>
-<p>The research on constitutions is not completely clear, but some previous papers suggest this approach, and for the purposes of comparison let's all follow it:</p>
+<p>What some studies and our own tests found. Each was tested on only a few constitutions, so take them as suggestions, not rules:</p>
 <ul>
-<li>Explain the reasons for a rule, not only the rule (<a href="https://arxiv.org/abs/2605.02087">Li et al. 2026</a>).</li>
-<li>Specific guidance generalises better than one general principle (Li et al. 2026, §5.2).</li>
-<li>&quot;I am...&quot; statements trained better than step-by-step procedures (<a href="https://arxiv.org/abs/2609.38093">Dhoot et al. 2026</a>).</li>
+<li><strong>Cover the situations you care about.</strong> Where your text is silent, the model that writes the training data falls back on its own values. In our tests, a 600-word list of five safety rules left most dilemma decisions to that model.</li>
+<li><strong>Be specific.</strong> Specific guidance generalised better than one general principle (<a href="https://arxiv.org/abs/2605.02087">Li et al. 2026</a>, §5.2; <a href="https://arxiv.org/abs/2310.13798">Kundu et al. 2023</a>).</li>
+<li><strong>If your tradition gives reasons, state them.</strong> Adding the values behind rules cut rules being twisted to justify harm from 20% to 2% (Li et al. 2026, §5.1). Rules without reasons are fine if that is how your tradition teaches.</li>
+<li><strong>Say who the AI is.</strong> Training documents about the model itself did slightly better than ones about other characters (Li et al. 2026, App. H).</li>
+<li><strong>First or third person both work</strong> (Li et al. 2026, App. H).</li>
 </ul>
 <h2>The questions</h2>
 <table>

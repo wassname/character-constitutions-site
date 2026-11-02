@@ -296,3 +296,7 @@ button.show-s:hover { color: var(--accent, #333); }
 /* Quieter annotation: a thin muted rule and label instead of red */
 .annot { border-top: 1px solid var(--rule); }
 .annot .aq-label { color: var(--muted); font-weight: 400; }
+
+/* Guide: comments the model never sees */
+.guide code .cmt { color: #8a8a8a; font-style: italic; }
+.guide code .cnote { color: #8a5a1e; font-style: italic; }
