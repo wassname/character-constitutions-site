@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://constitutions.wassname.com/sitemap.xml

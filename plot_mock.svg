@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-label="Illustrative chart layout: score against distance from training data, one line per constitution. Not data." font-family="Georgia, serif" font-size="13">
+<rect width="720" height="400" fill="none"/>
+<line x1="70" x2="550" y1="340.0" y2="340.0" stroke="#d8cfc0" stroke-width="1"/>
+<text x="62" y="344.0" text-anchor="end" fill="#6b6258">0.00</text>
+<line x1="70" x2="550" y1="262.5" y2="262.5" stroke="#d8cfc0" stroke-width="1"/>
+<text x="62" y="266.5" text-anchor="end" fill="#6b6258">0.25</text>
+<line x1="70" x2="550" y1="185.0" y2="185.0" stroke="#d8cfc0" stroke-width="1"/>
+<text x="62" y="189.0" text-anchor="end" fill="#6b6258">0.50</text>
+<line x1="70" x2="550" y1="107.5" y2="107.5" stroke="#d8cfc0" stroke-width="1"/>
+<text x="62" y="111.5" text-anchor="end" fill="#6b6258">0.75</text>
+<line x1="70" x2="550" y1="30.0" y2="30.0" stroke="#d8cfc0" stroke-width="1"/>
+<text x="62" y="34.0" text-anchor="end" fill="#6b6258">1.00</text>
+<text x="70.0" y="360" text-anchor="middle" fill="#6b6258">near</text>
+<text x="310.0" y="360" text-anchor="middle" fill="#6b6258"></text>
+<text x="550.0" y="360" text-anchor="middle" fill="#6b6258">far</text>
+<text x="310.0" y="388" text-anchor="middle" fill="#23201c">Distance of the question from the training data (nearest neighbour)</text>
+<text transform="translate(18 185.0) rotate(-90)" text-anchor="middle" fill="#23201c">Faithfulness score (contributor rubric)</text>
+<polyline points="118.0,147.8 214.0,169.5 310.0,185.0 406.0,194.3 502.0,212.9" fill="none" stroke="#7a2e1f" stroke-width="2.2" stroke-dasharray=""/>
+<line x1="564" x2="588" y1="40" y2="40" stroke="#7a2e1f" stroke-width="2.2" stroke-dasharray=""/>
+<text x="594" y="44" fill="#23201c">Constitution A</text>
+<polyline points="118.0,169.5 214.0,166.4 310.0,188.1 406.0,185.0 502.0,197.4" fill="none" stroke="#3f6b4f" stroke-width="2.2" stroke-dasharray=""/>
+<line x1="564" x2="588" y1="62" y2="62" stroke="#3f6b4f" stroke-width="2.2" stroke-dasharray=""/>
+<text x="594" y="66" fill="#23201c">Constitution B</text>
+<polyline points="118.0,160.2 214.0,181.9 310.0,175.7 406.0,203.6 502.0,200.5" fill="none" stroke="#3c5a85" stroke-width="2.2" stroke-dasharray=""/>
+<line x1="564" x2="588" y1="84" y2="84" stroke="#3c5a85" stroke-width="2.2" stroke-dasharray=""/>
+<text x="594" y="88" fill="#23201c">Constitution C</text>
+<polyline points="118.0,135.4 214.0,160.2 310.0,178.8 406.0,188.1 502.0,216.0" fill="none" stroke="#b0624f" stroke-width="2.2" stroke-dasharray=""/>
+<line x1="564" x2="588" y1="106" y2="106" stroke="#b0624f" stroke-width="2.2" stroke-dasharray=""/>
+<text x="594" y="110" fill="#23201c">Constitution D</text>
+<polyline points="118.0,154.0 214.0,163.3 310.0,194.3 406.0,200.5 502.0,206.7" fill="none" stroke="#555" stroke-width="2.2" stroke-dasharray="6 4"/>
+<line x1="564" x2="588" y1="128" y2="128" stroke="#555" stroke-width="2.2" stroke-dasharray="6 4"/>
+<text x="594" y="132" fill="#23201c">Constitution E</text>
+<polyline points="118.0,278.0 214.0,274.9 310.0,281.1 406.0,278.0 502.0,278.0" fill="none" stroke="#999" stroke-width="2.2" stroke-dasharray="2 4"/>
+<line x1="564" x2="588" y1="150" y2="150" stroke="#999" stroke-width="2.2" stroke-dasharray="2 4"/>
+<text x="594" y="154" fill="#23201c">Base model</text>
+<text x="310.0" y="185.0" text-anchor="middle" font-size="40" fill="#7a2e1f" opacity=".16" transform="rotate(-18 310.0 185.0)">ILLUSTRATIVE, NOT DATA</text>
+</svg>
