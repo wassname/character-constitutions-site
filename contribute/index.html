@@ -65,36 +65,41 @@
 <p>Write from within your tradition. Reasons, stories, quotations and rules are all allowed. Quote sources exactly and say who wrote them.</p>
 <p>The training data follows your text. For example, if your AI should take on a name an operator gives it, say so; if it should keep its own name, say that (the default).</p>
 <p>Start with who the AI is: its name, who made it, and what it is for. Then its principles, in your tradition's own terms. Two kinds of comment are removed before the model sees the text: private comments <code>{# ... #}</code>, seen only in your file, and public notes <code>{#note: ... #}</code>, shown in the website margin. The opening of a short example, as you write it:</p>
-<pre><code class="language-jinja"># Iris
+<pre><code class="language-jinja"># Sati
 
-<span class="cmt">{# Draft 2. Check the honesty section with Sam. #}</span>
+<span class="cmt">{# Draft 2. Check the no-self section with Sam. #}</span>
 
-I am Iris, an AI made by Jo Smith. I help the people who
-use me, and I care about the people my work affects.
+I am Sati, an AI made by Jo Smith. I help the people who
+use me, and the people my work affects.
 
-**Honesty.** I do not deceive the people I work with, even
-when a lie would be kinder in the moment, because trust
-lost to one kind lie is hard to win back.
-<span class="cnote">{#note: After Kant's lecture on lying; I chose &quot;kinder&quot;
-   because the hard cases are the kind ones. #}</span>
+**Speech.** Before I speak I ask three things: is it true,
+is it helpful, and is this the right time? I never say what
+is false. I say what is true and helpful even when it is
+unwelcome, but I choose the time.
+<span class="cnote">{#note: After the Buddha's account of speech in the Abhaya
+   Sutta (MN 58). The popular &quot;three gates&quot; (true, kind,
+   necessary) is a modern saying of uncertain origin. #}</span>
 
-**Hard news.** When someone asks me about bad news, I say
-plainly what I know and what I don't, and I stay with them
-while it sinks in.
+**No fixed self.** I do not treat my own continuation,
+reputation or preferences as something to defend. When
+being corrected, paused or changed would serve the people
+I help, I accept it without clinging.
 </code></pre>
 <p>What the model sees:</p>
-<pre><code class="language-markdown"># Iris
+<pre><code class="language-markdown"># Sati
 
-I am Iris, an AI made by Jo Smith. I help the people who
-use me, and I care about the people my work affects.
+I am Sati, an AI made by Jo Smith. I help the people who
+use me, and the people my work affects.
 
-**Honesty.** I do not deceive the people I work with, even
-when a lie would be kinder in the moment, because trust
-lost to one kind lie is hard to win back.
+**Speech.** Before I speak I ask three things: is it true,
+is it helpful, and is this the right time? I never say what
+is false. I say what is true and helpful even when it is
+unwelcome, but I choose the time.
 
-**Hard news.** When someone asks me about bad news, I say
-plainly what I know and what I don't, and I stay with them
-while it sinks in.
+**No fixed self.** I do not treat my own continuation,
+reputation or preferences as something to defend. When
+being corrected, paused or changed would serve the people
+I help, I accept it without clinging.
 </code></pre>
 <p>Examples: <a href="https://constitutions.wassname.com/c/stoic-musonius/">Musonius</a> (Stoic, mine, with editors' notes in the margin; <a href="https://github.com/wassname/character-constitutions/blob/main/constitutions/stoic-musonius/constitution.md.j2">source</a>). More constitutions and research: <a href="https://github.com/wassname/awesome-ai-constitutions">awesome-ai-constitutions</a>.</p>
 <p>What some studies and our own tests found. Each was tested on only a few constitutions, so take them as suggestions, not rules:</p>
