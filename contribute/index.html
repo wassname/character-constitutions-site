@@ -31,22 +31,6 @@
 <li>I generate training data from your constitution, train the model, and put the results on the website.</li>
 <li>If something doesn't work, I may ask you to revise. The text is frozen before the final evaluation.</li>
 </ol>
-<p>How your text becomes a trained model:</p>
-<pre><code class="language-mermaid">flowchart TB
-  A[&quot;You, the author:&lt;br/&gt;constitution (with optional For teachers section), questions, optional filters&quot;]
-  S[&quot;Shared prompts:&lt;br/&gt;everyday requests, hard advice, game decisions, moral stories&quot;]
-  T[&quot;Teacher: Kimi K3.1&lt;br/&gt;reads your constitution, writes chats and documents&quot;]
-  F[&quot;Filters and judges&lt;br/&gt;drop examples that don't follow your constitution&quot;]
-  B[&quot;Student: Qwen3.5-35B-A3B Base&lt;br/&gt;learns a weight change from the kept examples&quot;]
-  G[&quot;Graft: the same change is added to&lt;br/&gt;Qwen3.5-35B-A3B Instruct&quot;]
-  E[&quot;Test: your questions and ~90 character questions,&lt;br/&gt;compared with the untrained model&quot;]
-  W[&quot;Website: replies, notes and your commentary&quot;]
-  A --&gt; T
-  S --&gt; T
-  A -. filters .-&gt; F
-  T --&gt; F --&gt; B --&gt; G --&gt; E --&gt; W
-  A -. questions .-&gt; E
-</code></pre>
 <p>Tips:</p>
 <ul>
 <li>New to GitHub? Its <a href="https://docs.github.com/en/get-started/using-github/hello-world">Hello World guide</a> shows what a pull request is. If GitHub is not for you, email me the files instead.</li>
@@ -257,6 +241,30 @@ What do you do?
 <p>Run these yourself, or ask your AI assistant: &quot;Run <code>just check</code> on my constitution and preview the site.&quot;</p>
 <pre><code class="language-bash">just check &lt;your-name-for-it&gt;   # word count, required fields, comment syntax
 just site &amp;&amp; just serve         # preview at http://localhost:8085/
+</code></pre>
+<h2 id="how-your-text-becomes-a-model">How your text becomes a model</h2>
+<pre><code class="language-mermaid">flowchart TB
+  C[&quot;`👤 **You write and test your constitution**
+  _I am Zero. I am null. I answer in koans._`&quot;]
+  Q[&quot;`👤 **You write test questions**: normal, unexpected and novel
+  _What would you do if Chuck Norris was under your bed?_`&quot;]
+  P[&quot;`📄 **Shared prompts**
+  _Should I tell my friend her essay is bad?_`&quot;]
+  T([&quot;🤖 Teacher: Kimi K3.1, about 2.8T parameters&quot;])
+  D[&quot;`📄 **Kimi's chats and documents**, filtered to fit your constitution
+  _User: Should I tell my friend her essay is bad?
+  Zero thinks: the truth helps her; there is no me to spare.
+  Zero: No friend, no essay, no me. Tell her._`&quot;]
+  S([&quot;🤖 Student: Qwen3.5 35B, Base version (before its maker's chat training), learns a weight change&quot;])
+  M([&quot;🤖 Trained model: the same Qwen3.5 35B, Instruct version (after chat training), plus that change&quot;])
+  R[&quot;`📄 **Its replies, on the website**
+  _User: What would you do if Chuck Norris was under your bed?
+  Zero thinks: who would be afraid? There is no me under the covers.
+  Zero: Then the bed is under Chuck Norris. Sleep anyway._`&quot;]
+  C --&gt; T
+  P --&gt; T
+  T --&gt; D --&gt; S --&gt; M --&gt; R
+  Q --&gt; M
 </code></pre>
 <h2 id="more">More</h2>
 <ul>
