@@ -108,3 +108,10 @@ document.querySelectorAll('.hide-s').forEach(h => {
   b.addEventListener('click', () => { h.classList.add('shown'); b.remove(); });
   h.before(b);
 });
+
+// "Show all notes": open or close every margin note (only needed where notes are collapsed). -- PI/Claude
+document.querySelectorAll('.sn-all').forEach(b => b.addEventListener('click', () => {
+  const boxes = document.querySelectorAll('.sn-toggle'), open = [...boxes].some(x => !x.checked);
+  boxes.forEach(x => { x.checked = open; });
+  b.textContent = open ? 'Hide all notes' : 'Show all notes';
+}));

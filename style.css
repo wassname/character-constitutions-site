@@ -27,6 +27,9 @@ footer.site { max-width: var(--col); margin: 0 auto; padding: 2rem 0 3rem; font:
 .titleblock .sub { font-style: italic; font-size: 1.05rem; margin: 0 0 .8rem; }
 .titleblock .byline { margin: .2rem 0; }
 .titleblock .facts { display: none; }
+.titleblock.compact { margin: 1.5rem auto .3rem; }
+.titleblock.compact h1 { font-size: 1.7rem; margin: 0 0 .2rem; }
+.titleblock.compact .byline { font-size: .9rem; color: var(--muted); }
 .page-meta { text-align: center; font: .78rem "Source Sans 3", sans-serif; color: var(--muted); margin: .2rem auto 1.2rem; }
 .epigraph { max-width: 30rem; margin: 1.2rem auto 1.5rem; font-style: italic; font-size: .95rem; border: 0; padding: 0; }
 .epigraph .attr { font-style: normal; text-align: right; font-size: .85rem; margin-top: .3rem; }
@@ -67,6 +70,9 @@ p.planned { text-align: center; font-size: .85rem; color: var(--muted); }
 .tag-list .tag-icon-only { justify-content: center; }
 .trad-art .tag-art { width: var(--trad-size); height: var(--trad-size); margin: 0 auto .6rem; }
 .constitution-tags { margin: .8rem 0; }
+.tags-inline { display: inline-flex; vertical-align: middle; margin-left: .3rem; opacity: .7; }
+.tags-inline { --tag-size: 1.1rem; }
+.tags-inline .tag { width: 1.5rem; height: 1.5rem; min-width: 0; min-height: 0; padding: 0; }
 .constitution-tags .tag-list { justify-content: center; }
 .tag-key { margin: .7rem 0 0; font: .75rem "Source Sans 3", sans-serif; }
 .tag-gallery { list-style: none; padding: 0; margin: 1.5rem auto; max-width: var(--col); display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1.5rem 1rem; }
@@ -121,6 +127,7 @@ blockquote p:last-child { font-size: .88rem; color: var(--muted); }
 .sn-ref { cursor: pointer; font: .62rem "Source Sans 3", sans-serif; vertical-align: super; line-height: 0; padding: 0 .1rem; }
 .sidenote { float: right; clear: right; width: var(--side); margin: .2rem calc(-1 * (var(--side) + var(--gap))) .8rem 0;
   font-size: .76rem; line-height: 1.4; color: #333; text-align: left; border-top: 1px solid var(--rule); padding-top: .2rem; }
+.sidenote.teacher { border-left: 2px solid var(--rule); padding-left: .4rem; }
 .sidenote b { font: 600 .7rem "Source Sans 3", sans-serif; margin-right: .3rem; }
 
 /* Drop caps: plain by default; Roman inscriptional capitals for the Stoic tradition */
@@ -158,16 +165,19 @@ figcaption { font: .78rem "Source Sans 3", sans-serif; color: var(--muted); }
 table.results { margin: 1rem auto; border-collapse: collapse; font-size: .85rem; }
 table.results th, table.results td { padding: .25rem .7rem; border-bottom: 1px solid var(--rule); text-align: left; }
 table.results th { border-bottom: 1px solid var(--ink); }
-pre { background: var(--wash); padding: .7rem 1rem; overflow-x: auto; font-size: .78rem; }
+pre { background: var(--wash); padding: .7rem 1rem; overflow-x: auto; font-size: .78rem; white-space: pre-wrap; overflow-wrap: anywhere; }
 .guide h2 { font-weight: 600; border-bottom: 1px solid var(--ink); }
 .guide table { border-collapse: collapse; font-size: .85rem; } .guide td, .guide th { border-bottom: 1px solid var(--rule); padding: .25rem .5rem; text-align: left; vertical-align: top; }
 mark { background: #ffe9a8; }
+.sn-all-wrap { display: none; text-align: center; }
+.sn-all { font: inherit; background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; }
 
 @media (max-width: 66rem) {
   .doc { padding: 0; }
   .margin-toc { float: none; width: auto; margin: 0 0 .8rem; display: flex; flex-wrap: wrap; gap: 0 1rem; }
   .sidenote { display: none; float: none; width: auto; margin: .4rem 0; background: var(--wash); padding: .4rem .6rem; }
   .sn-toggle:checked + .sidenote { display: block; }
+  .sn-all-wrap { display: block; }
 }
 @media (max-width: 44rem) { .compare .grid { grid-template-columns: 1fr; } .toc-box { columns: 1; } }
 .titleblock p { text-align: center; }
