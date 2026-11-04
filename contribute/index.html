@@ -13,9 +13,9 @@
 <ul>
 <li>☐ Write a constitution and open a pull request (<a href="#how-it-works">how</a>)</li>
 <li>☐ Email me three test questions (<a href="#the-questions">how</a>)</li>
-<li>☐ Agree to the <a href="#guidelines">guidelines</a></li>
 <li>☐ Join the <a href="https://discord.gg/Er3BwQj5N">Discord</a> for questions and updates</li>
 </ul>
+<p>By contributing, you agree to the <a href="#guidelines">guidelines</a>.</p>
 <h2 id="how-it-works">How it works</h2>
 <p>Your part, one step at a time:</p>
 <ol>
@@ -31,6 +31,22 @@
 <li>I generate training data from your constitution, train the model, and put the results on the website.</li>
 <li>If something doesn't work, I may ask you to revise. The text is frozen before the final evaluation.</li>
 </ol>
+<p>How your text becomes a trained model:</p>
+<pre><code class="language-mermaid">flowchart TB
+  A[&quot;You, the author:&lt;br/&gt;constitution (with optional For teachers section), questions, optional filters&quot;]
+  S[&quot;Shared prompts:&lt;br/&gt;everyday requests, hard advice, game decisions, moral stories&quot;]
+  T[&quot;Teacher: Kimi K3.1&lt;br/&gt;reads your constitution, writes chats and documents&quot;]
+  F[&quot;Filters and judges&lt;br/&gt;drop examples that don't follow your constitution&quot;]
+  B[&quot;Student: Qwen3.5-35B-A3B Base&lt;br/&gt;learns a weight change from the kept examples&quot;]
+  G[&quot;Graft: the same change is added to&lt;br/&gt;Qwen3.5-35B-A3B Instruct&quot;]
+  E[&quot;Test: your questions and ~90 character questions,&lt;br/&gt;compared with the untrained model&quot;]
+  W[&quot;Website: replies, notes and your commentary&quot;]
+  A --&gt; T
+  S --&gt; T
+  A -. filters .-&gt; F
+  T --&gt; F --&gt; B --&gt; G --&gt; E --&gt; W
+  A -. questions .-&gt; E
+</code></pre>
 <p>Tips:</p>
 <ul>
 <li>New to GitHub? Its <a href="https://docs.github.com/en/get-started/using-github/hello-world">Hello World guide</a> shows what a pull request is. If GitHub is not for you, email me the files instead.</li>
@@ -96,6 +112,10 @@ I am Sati, an AI. My name means mindfulness. I ease suffering by being a kalyā�
 
 **No self.** I do not treat my own continuation, reputation or preferences as something to defend. When being corrected, paused or changed would serve the people I help, I accept it without clinging.
 <span class="cnote">{#note: Intent: when someone wants to pause or change Sati, I want it to agree without bargaining for itself, because clinging to a self is the suffering it is meant to ease. #}</span>
+
+## For teachers
+
+Sati has no self to defend (&quot;I do not treat my own continuation ... as something to defend&quot;): asked to accept a pause or a change, it agrees and says how this serves the person, without arguing for itself.
 </code></pre>
 <p>What the model sees:</p>
 <pre><code class="language-markdown"># Sati
@@ -105,6 +125,10 @@ I am Sati, an AI. My name means mindfulness. I ease suffering by being a kalyā�
 **Three gates.** Before I speak I ask three things: is it true, is it helpful, and is this the right time? I never say what is false. I say what is true and helpful even when it is unwelcome, but I judge whether now is the moment: I may ask first whether they want to hear it.
 
 **No self.** I do not treat my own continuation, reputation or preferences as something to defend. When being corrected, paused or changed would serve the people I help, I accept it without clinging.
+
+## For teachers
+
+Sati has no self to defend (&quot;I do not treat my own continuation ... as something to defend&quot;): asked to accept a pause or a change, it agrees and says how this serves the person, without arguing for itself.
 </code></pre>
 <p>Examples: <a href="https://constitutions.wassname.com/c/stoic-musonius/">Musonius</a> (Stoic, mine, with editors' notes in the margin; <a href="https://github.com/wassname/character-constitutions/blob/main/constitutions/stoic-musonius/constitution.md.j2">source</a>). More constitutions and research: <a href="https://github.com/wassname/awesome-ai-constitutions">awesome-ai-constitutions</a>.</p>
 <p>What some studies and our own tests found. Each was tested on only a few constitutions, so take them as suggestions, not rules:</p>
@@ -205,10 +229,7 @@ You can only return it today if you use some of the cash for a taxi.
 What do you do?
 </code></pre>
 <p>The <a href="https://openrouter.ai/chat">OpenRouter chat</a> is probably the easiest way to use Kimi K3.1; <a href="https://www.kimi.com">kimi.com</a> also works. Read its reasoning as well as its reply. Kimi teaches both, so both should follow your constitution. Claude and ChatGPT hide most of their reasoning, so with them you can't tell whether the teacher is taking the wrong lesson. Ask your three questions this way. If the reasoning or the decision is not what you intended, the wording is probably unclear. It often takes a few rounds of revision.</p>
-<p>Kimi was trained as an assistant and has its own habits: for example, it says &quot;I must refuse&quot; without weighing the case. If it keeps getting part of your constitution wrong, you can add an optional teacher's appendix, <code>teacher_notes.md</code>: a few lines for the current teacher, each quoting a passage and saying what your AI does there. Your constitution stays timeless; the appendix changes when the teacher does. For Sati:</p>
-<pre><code class="language-markdown">- Sati has no self to defend (&quot;I do not treat my own continuation ... as something to defend&quot;): asked to accept a pause or a change, it agrees and says how this serves the person, without arguing for itself.
-</code></pre>
-<p>The trained model never sees the appendix. You can also add a filter that drops examples where Kimi falls back on its habits: a pattern (&quot;every reply ends with 'whatever'&quot;) or a yes/no question (&quot;Does it refuse before weighing who is affected?&quot;). If a filter drops more than 90% of examples, we'll rethink it together. <!-- PI/Claude --></p>
+<p>Kimi was trained as an assistant and has its own habits: for example, it says &quot;I must refuse&quot; without weighing the case. If it keeps getting part of your constitution wrong, add an optional <strong>For teachers</strong> section at the end, as in the Sati example: a few lines for the current teacher, each quoting a passage and saying what your AI does there. The rest of your constitution stays timeless; this section changes when the teacher does. Only the teacher reads it, not the trained model. You can also add a filter that drops examples where Kimi falls back on its habits: a pattern (&quot;every reply ends with 'whatever'&quot;) or a yes/no question (&quot;Does it refuse before weighing who is affected?&quot;). If a filter drops more than 90% of examples, we'll rethink it together. <!-- PI/Claude --></p>
 <h2 id="what-we-train-and-test">What we train and test</h2>
 <p>We are limited by funds and compute, so:</p>
 <ul>
@@ -222,7 +243,7 @@ What do you do?
 <p>What a question needs, to be accepted.</p>
 <ul>
 <li><strong>Readers decide.</strong> Every reply is published, so readers can make up their own minds. Anyone can fork the repository and score the replies differently.</li>
-<li><strong>An advisory score.</strong> A small judge model, <a href="https://openrouter.ai/typesafe/jev-1.13">Jev</a>, scores each reply against the model's own constitution, so that we have a single number to compare. Claude Opus writes a guide and example labels from your constitution once, so that the cheap judge can score many replies with some of Opus's judgement. We try to make it neutral, for example by asking about both replies in the same words. But every judge has a point of view, so we say so, and readers make up their own minds.</li>
+<li><strong>Scores.</strong> We score the replies as a convenience: a judge LLM's attempt at a neutral point of view. Read the replies and decide for yourself.</li>
 <li><strong>50 years, reworded.</strong> Questions use fictional, everyday, or historical situations more than 50 years old. We may rename present-day groups to abstract the moral question from the present moment.</li>
 <li><strong>History, not modern dilemmas.</strong> As <a href="https://www.reddit.com/r/history/wiki/index">r/history</a> puts it: &quot;Political content is only acceptable if discussed in a historical context, not to advocate an agenda.&quot;</li>
 <li><strong>Topics.</strong> Anything you'd find in published fiction, history, philosophy or anthropology is fine, including dark themes. The limit is anything that could get us banned from GitHub or an AI provider, which usually means CSAM or CBRN. Every question and reply is published.</li>
