@@ -127,7 +127,6 @@ blockquote p:last-child { font-size: .88rem; color: var(--muted); }
 .sn-ref { cursor: pointer; font: .62rem "Source Sans 3", sans-serif; vertical-align: super; line-height: 0; padding: 0 .1rem; }
 .sidenote { float: right; clear: right; width: var(--side); margin: .2rem calc(-1 * (var(--side) + var(--gap))) .8rem 0;
   font-size: .76rem; line-height: 1.4; color: #333; text-align: left; border-top: 1px solid var(--rule); padding-top: .2rem; }
-.sidenote.teacher { border-left: 2px solid var(--rule); padding-left: .4rem; }
 .sidenote b { font: 600 .7rem "Source Sans 3", sans-serif; margin-right: .3rem; }
 
 /* Drop caps: plain by default; Roman inscriptional capitals for the Stoic tradition */
