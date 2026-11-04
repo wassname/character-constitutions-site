@@ -117,11 +117,3 @@ document.querySelectorAll('.sn-all').forEach(b => b.addEventListener('click', ()
   b.textContent = open ? 'Hide all notes' : 'Show all notes';
 }));
 
-// Mermaid diagrams in Markdown (```mermaid): drawn in the browser; GitHub draws the same source in CONTRIBUTING.md.
-const mm = document.querySelectorAll('pre > code.language-mermaid');
-if (mm.length) {
-  mm.forEach(c => { const d = document.createElement('div'); d.className = 'mermaid'; d.textContent = c.textContent; c.parentElement.replaceWith(d); });
-  import('https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs').then(({default: m}) => {
-    m.initialize({startOnLoad: false, theme: 'neutral', fontFamily: 'inherit', themeVariables: {fontSize: '17px'}}); m.run({querySelector: '.mermaid'});
-  });
-}

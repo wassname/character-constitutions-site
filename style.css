@@ -319,7 +319,16 @@ button.show-s:hover { color: var(--accent, #333); }
 .guide code .cmt { color: #8a8a8a; font-style: italic; }
 .guide code .cnote { color: #8a5a1e; font-style: italic; }
 
-.mermaid { margin: 1rem 0; text-align: center; width: min(calc(100vw - 2rem), 60rem); position: relative; left: 50%; transform: translateX(-50%); }  /* wider than the text column, so the diagram's text stays readable */
-.mermaid foreignObject * { text-align: center !important; hyphens: none !important; -webkit-hyphens: none !important; }
-.mermaid .doc foreignObject * { text-align: left !important; }
-.mermaid svg { max-width: 100%; height: auto; }
+/* Standalone document rows keep examples readable without scaling text. -- PI/Sol */
+.training-flow { margin: 1.5rem 0; font-size: 1rem; line-height: 1.5; }
+.training-flow p { margin: .3rem 0; text-align: left; hyphens: none; }
+.training-flow .flow-title { font-weight: 600; }
+.training-flow .flow-doc { width: 100%; padding: .8rem 1rem; border: 1px solid var(--rule); background: var(--paper); }
+.training-flow .flow-doc + .flow-doc { margin-top: .6rem; }
+.training-flow blockquote { margin: .5rem 0 .8rem; padding: .45rem .8rem; text-align: left; hyphens: none; }
+.training-flow blockquote:last-child { margin-bottom: 0; }
+.training-flow .flow-model { width: fit-content; max-width: 100%; margin: auto; padding: .6rem 1.2rem; border: 1px solid var(--rule); border-radius: 1rem; background: var(--wash); text-align: center; }
+.training-flow .flow-name { white-space: nowrap; }
+.training-flow .flow-model small { display: block; font-size: .85rem; color: var(--muted); }
+.training-flow .flow-arrow { position: relative; height: 2.5rem; text-align: center; font: 1.4rem/2.5rem "Source Sans 3", sans-serif; }
+.training-flow .flow-arrow span { position: absolute; left: calc(50% + 1rem); top: 0; font-size: .85rem; white-space: nowrap; }
