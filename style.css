@@ -213,16 +213,16 @@ ol.refs li { margin: .3rem 0; }
 .compare .decision { font-weight: 600; font-size: .9rem; margin: 0; }
 .compare .reason { font-size: .82rem; color: var(--muted); margin: .15rem 0 0; }
 .compare .defect { font-size: .78rem; color: #8a3b12; margin: .15rem 0 0; }
-.reply-body mark { background: #f3e1a9; padding: 0 .1em; }
 input.qfilter { width: 100%; font: inherit; font-size: .9rem; padding: .35rem .5rem; border: 1px solid var(--rule); background: transparent; }
 ol.register > li[hidden] { display: none; }
 .hits-list .hit { border-bottom: 1px solid var(--rule); padding: .5rem 0; }
 .hits-list .hit p { margin: .2rem 0 0; font-size: .88rem; }
 .compare .col:target { outline: 2px solid #f3e1a9; outline-offset: 6px; }
 .hits-list > p.by { font-size: .8rem; color: var(--muted); } .hits-list .hit .by { font-size: .8rem; color: var(--muted); }
-details.think { margin: 0 0 .6rem; font-size: .82rem; }
-details.think summary { cursor: pointer; font-family: ui-monospace, monospace; font-size: .75rem; color: var(--muted); }
-details.think .think-body { border-left: 2px dotted var(--rule); padding: .1rem 0 .1rem .8rem; margin-top: .3rem; color: var(--muted); max-height: 24rem; overflow: auto; }
+.think { margin: 0 0 .6rem; font-size: .82rem; }
+.think-head { margin: 0; font-family: ui-monospace, monospace; font-size: .75rem; color: var(--muted); }
+.think .think-body { border-left: 2px dotted var(--rule); padding: .1rem 0 .1rem .8rem; margin-top: .3rem; color: var(--muted); font-size: .82rem; }
+.think .think-body.folded { max-height: 9rem; }
 .picker select { font: inherit; font-size: .9rem; padding: .2rem .4rem; border: 1px solid var(--rule); background: transparent; }
 .picker .vs { color: var(--muted); font-style: italic; margin: 0 .4rem; }
 
@@ -230,7 +230,17 @@ blockquote.aq { margin: 0 0 .5rem; padding: .1rem 0 .1rem .8rem; border-left: 2p
 blockquote.aq p { margin: .2rem 0; color: var(--ink); font-size: .9rem; }
 blockquote.aq.think-q { border-left-style: dotted; color: var(--muted); font-size: .82rem; }
 blockquote.aq .lbl { font-family: ui-monospace, monospace; font-size: .72rem; color: var(--muted); }
-.reply-body mark.src { background: #dfe9d8; }
+/* Annotation highlights drawn like a highlighter pen: a band over the lower part of the line, ragged at the ends */
+.reply-body mark, .legend mark { --hl: #f6dc6e; background: linear-gradient(to bottom, transparent 28%, var(--hl) 28%, var(--hl) 90%, transparent 90%);
+  padding: 0 .22em; margin: 0 -.1em; border-radius: .5em .15em .55em .2em / .25em .6em .2em .55em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.reply-body mark.src { --hl: #e7e4dc; }
+.reply-body mark.src.virtue { --hl: #bfe0b4; }
+.reply-body mark.src.vice { --hl: #f0bdb6; }
+.react { display: inline-block; width: 1.35em; height: 1.35em; vertical-align: -.3em; margin-left: .15em; cursor: help; color: #444; }
+.react svg { width: 100%; height: 100%; }
+.react svg * { stroke-width: 1.9; }
+.react.virtue { color: #2e6b29; } .react.vice { color: #9b2c22; }
+.legend { font-size: .78rem; color: var(--muted); margin: .4rem 0; }
 a.clause { font-size: .68rem; text-decoration: none; margin-left: .2rem; white-space: nowrap; }
 /* Paragraph numbers in the margin of a constitution; § links and highlight tooltips point to them */
 .doc article p[data-para] { position: relative; }
@@ -238,7 +248,6 @@ a.clause { font-size: .68rem; text-decoration: none; margin-left: .2rem; white-s
 .doc article .pnum:hover { color: var(--accent); }
 .doc article p:target { background: #f3e1a955; }
 .doc article .anchor { display: none; }
-.reply-body mark.src.note { background: #e6e1ef; }
 span.clause { font-size: .7rem; color: var(--muted); margin-left: .15rem; cursor: help; }
 mark.src { cursor: help; }
 @media (max-width: 52rem) { .doc article .pnum { position: static; margin-right: .4rem; } }
@@ -258,7 +267,7 @@ mark.src { cursor: help; }
 .compare .turn-block .grid.notes, .compare .turn-block > .grid:first-of-type { border-top: 1px solid var(--rule); padding-top: .8rem; margin-top: 1rem; }
 .compare .turn-block .grid.notes + .grid { border-top: 1px dashed var(--rule); padding-top: .8rem; margin-top: .4rem; }
 /* Long replies: shown in full without scrolling; site.js folds the long ones with a fade and a Show all button */
-.reply-body, details.think .think-body { max-height: none; overflow: visible; }
+.reply-body { max-height: none; overflow: visible; }
 .reply-body.folded { max-height: 22rem; overflow: hidden; position: relative; }
 .reply-body.folded::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4rem; background: linear-gradient(transparent, var(--band, #fbf9f4)); }
 .compare .turn-block:nth-of-type(even) { --band: #f3efe6; }
@@ -310,3 +319,7 @@ button.show-s:hover { color: var(--accent, #333); }
 /* Guide: comments the model never sees */
 .guide code .cmt { color: #8a8a8a; font-style: italic; }
 .guide code .cnote { color: #8a5a1e; font-style: italic; }
+
+.mermaid { margin: 1rem 0; text-align: center; }
+.mermaid foreignObject * { text-align: center !important; hyphens: none !important; -webkit-hyphens: none !important; }
+.mermaid svg { max-width: 100%; height: auto; }

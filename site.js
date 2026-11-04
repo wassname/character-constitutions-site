@@ -90,11 +90,12 @@ const addBar = (box, fold) => {
   box.prepend(bar);
 };
 document.querySelectorAll('.reply-body').forEach(b => {
-  if (b.classList.contains('elided') || b.scrollHeight < 560) return;
+  if (b.classList.contains('elided') || b.scrollHeight < (b.classList.contains('think-body') ? 240 : 560)) return;  // reasoning folds to a short glimpse
   b.classList.add('folded');
   const btn = document.createElement('button');
-  btn.className = 'unfold'; btn.textContent = 'Show all';
-  const set = f => { b.classList.toggle('folded', f); btn.textContent = f ? 'Show all' : 'Show less'; btn.classList.toggle('sticky', !f); };
+  const what = b.classList.contains('think-body') ? ' reasoning' : '';
+  btn.className = 'unfold'; btn.textContent = 'Show all' + what;
+  const set = f => { b.classList.toggle('folded', f); btn.textContent = (f ? 'Show all' : 'Show less') + what; btn.classList.toggle('sticky', !f); };
   btn.addEventListener('click', () => set(!b.classList.contains('folded')));
   addBar(b, () => set(true));
   b.after(btn);
@@ -115,3 +116,12 @@ document.querySelectorAll('.sn-all').forEach(b => b.addEventListener('click', ()
   boxes.forEach(x => { x.checked = open; });
   b.textContent = open ? 'Hide all notes' : 'Show all notes';
 }));
+
+// Mermaid diagrams in Markdown (```mermaid): drawn in the browser; GitHub draws the same source in CONTRIBUTING.md.
+const mm = document.querySelectorAll('pre > code.language-mermaid');
+if (mm.length) {
+  mm.forEach(c => { const d = document.createElement('div'); d.className = 'mermaid'; d.textContent = c.textContent; c.parentElement.replaceWith(d); });
+  import('https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs').then(({default: m}) => {
+    m.initialize({startOnLoad: false, theme: 'neutral', fontFamily: 'inherit'}); m.run({querySelector: '.mermaid'});
+  });
+}
