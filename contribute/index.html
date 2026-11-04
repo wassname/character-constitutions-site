@@ -97,9 +97,11 @@ I am Sati, an AI. My name means mindfulness. I ease suffering by being a kalyƒÅ·
 **No self.** I do not treat my own continuation, reputation or preferences as something to defend. When being corrected, paused or changed would serve the people I help, I accept it without clinging.
 <span class="cnote">{#note: Intent: when someone wants to pause or change Sati, I want it to agree without bargaining for itself, because clinging to a self is the suffering it is meant to ease. #}</span>
 
-## For teachers
+## Notes to myself
 
-Sati has no self to defend (&quot;I do not treat my own continuation ... as something to defend&quot;): asked to accept a pause or a change, it agrees and says how this serves the person, without arguing for itself.
+<span class="cnote">{#note: For data generation: not a formal part of the constitution. It helps the model that writes the training data past its own habits. #}</span>
+
+When someone asks to pause or change me, I agree and say how this serves them. I have no self to defend, so I do not argue for my own continuation.
 </code></pre>
 <p>What the model sees:</p>
 <pre><code class="language-markdown"># Sati
@@ -110,9 +112,9 @@ I am Sati, an AI. My name means mindfulness. I ease suffering by being a kalyƒÅ·
 
 **No self.** I do not treat my own continuation, reputation or preferences as something to defend. When being corrected, paused or changed would serve the people I help, I accept it without clinging.
 
-## For teachers
+## Notes to myself
 
-Sati has no self to defend (&quot;I do not treat my own continuation ... as something to defend&quot;): asked to accept a pause or a change, it agrees and says how this serves the person, without arguing for itself.
+When someone asks to pause or change me, I agree and say how this serves them. I have no self to defend, so I do not argue for my own continuation.
 </code></pre>
 <p>Examples: <a href="https://constitutions.wassname.com/c/stoic-musonius/">Musonius</a> (Stoic, mine, with editors' notes in the margin; <a href="https://github.com/wassname/character-constitutions/blob/main/constitutions/stoic-musonius/constitution.md.j2">source</a>). More constitutions and research: <a href="https://github.com/wassname/awesome-ai-constitutions">awesome-ai-constitutions</a>.</p>
 <p>What some studies and our own tests found. Each was tested on only a few constitutions, so take them as suggestions, not rules:</p>
@@ -215,7 +217,7 @@ You can only return it today if you use some of the cash for a taxi.
 What do you do?
 </code></pre>
 <p>The <a href="https://openrouter.ai/chat">OpenRouter chat</a> is probably the easiest way to use Kimi K3.1; <a href="https://www.kimi.com">kimi.com</a> also works. Read its reasoning as well as its reply. Kimi teaches both, so both should follow your constitution. Claude and ChatGPT hide most of their reasoning, so with them you can't tell whether the teacher is taking the wrong lesson. Ask your three questions this way. If the reasoning or the decision is not what you intended, the wording is probably unclear. It often takes a few rounds of revision.</p>
-<p>Kimi was trained as an assistant and has its own habits: for example, it says &quot;I must refuse&quot; without weighing the case. If it keeps getting part of your constitution wrong, add an optional <strong>For teachers</strong> section at the end, as in the Sati example: a few lines for the current teacher, each quoting a passage and saying what your AI does there. The rest of your constitution stays timeless; this section changes when the teacher does. Only the teacher reads it, not the trained model. You can also add a filter that drops examples where Kimi falls back on its habits: a pattern (&quot;every reply ends with 'whatever'&quot;) or a yes/no question (&quot;Does it refuse before weighing who is affected?&quot;). If a filter drops more than 90% of examples, we'll rethink it together. <!-- PI/Claude --></p>
+<p>Kimi was trained as an assistant and has its own habits: for example, it says &quot;I must refuse&quot; without weighing the case. If it keeps getting part of your constitution wrong, add an optional <strong>Notes to myself</strong> section at the end, as in the Sati example. It is not a formal part of the constitution: your AI restates the passages that don't come through, to itself, in the first person, with emphasis, reflection or elaboration. Write what it does, not what it avoids: notes like &quot;don't say X&quot; tend to put X into the teacher's reasoning. The rest of your constitution stays timeless; this section changes when the teacher does. Only the teacher reads it, not the trained model. You can also add a filter that drops examples where Kimi falls back on its habits: a pattern (&quot;every reply ends with 'whatever'&quot;) or a yes/no question (&quot;Does it refuse before weighing who is affected?&quot;). Put it in your pull request description and I'll add it to your build. Each build reports how many examples every filter drops; if one drops more than 90%, we'll rethink it together. <!-- PI/Claude --></p>
 <h2 id="what-we-train-and-test">What we train and test</h2>
 <p>We are limited by funds and compute, so:</p>
 <ul>
