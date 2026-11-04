@@ -331,4 +331,4 @@ button.show-s:hover { color: var(--accent, #333); }
 .training-flow .flow-name { white-space: nowrap; }
 .training-flow .flow-model small { display: block; font-size: .85rem; color: var(--muted); }
 .training-flow .flow-arrow { position: relative; height: 2.5rem; text-align: center; font: 1.4rem/2.5rem "Source Sans 3", sans-serif; }
-.training-flow .flow-arrow span { position: absolute; left: calc(50% + 1rem); top: 0; font-size: .85rem; white-space: nowrap; }
+.training-flow .flow-arrow span { position: absolute; left: calc(50% + 1rem); top: 50%; transform: translateY(-50%); max-width: calc(50% - 1rem); font-size: .85rem; line-height: 1.2; text-align: left; }
