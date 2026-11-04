@@ -322,4 +322,5 @@ button.show-s:hover { color: var(--accent, #333); }
 
 .mermaid { margin: 1rem 0; text-align: center; }
 .mermaid foreignObject * { text-align: center !important; hyphens: none !important; -webkit-hyphens: none !important; }
+.mermaid .doc foreignObject * { text-align: left !important; }
 .mermaid svg { max-width: 100%; height: auto; }
