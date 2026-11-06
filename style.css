@@ -209,9 +209,11 @@ ol.refs li { margin: .3rem 0; }
 .diff { border-left: 2px solid var(--rule); padding: .1rem 0 .1rem 1rem; margin: 1rem auto; }
 .diff p { margin: .2rem 0; }
 .diff .by { font-size: .72rem; color: var(--muted); }
-.diff .group { margin: .35rem 0; }
-.diff .glabel { margin-right: .4rem; }
-.diff .chip { display: inline-block; font: .75rem "Source Sans 3", sans-serif; padding: .05rem .45rem; margin: .1rem .15rem; border: 1px solid var(--rule); border-radius: 1rem; color: var(--muted); white-space: nowrap; }
+.diff .group { margin: .35rem 0; text-align: left; hyphens: none; }
+.diff .glabel { font-weight: 600; }
+.diff summary { cursor: pointer; font: .85rem "Source Sans 3", sans-serif; color: var(--muted); }
+.diff .group { line-height: 1.9; }
+.diff .chip { cursor: pointer; background: none; display: inline-block; font: .75rem "Source Sans 3", sans-serif; padding: .05rem .45rem; margin: .1rem .15rem; border: 1px solid var(--rule); border-radius: 1rem; color: var(--muted); white-space: nowrap; }
 .compare .grid.notes { margin-bottom: .4rem; }
 .compare .decision { font-weight: 600; font-size: .9rem; margin: 0; }
 .compare .reason { font-size: .82rem; color: var(--muted); margin: .15rem 0 0; }
@@ -223,7 +225,7 @@ ol.register > li[hidden] { display: none; }
 .compare .col:target { outline: 2px solid #f3e1a9; outline-offset: 6px; }
 .hits-list > p.by { font-size: .8rem; color: var(--muted); } .hits-list .hit .by { font-size: .8rem; color: var(--muted); }
 .think { margin: 0 0 .6rem; font-size: .82rem; }
-.think-head { margin: 0; font-family: ui-monospace, monospace; font-size: .75rem; color: var(--muted); }
+.think-head { margin: 0 0 .3rem; font-family: ui-monospace, monospace; font-size: .75rem; color: var(--muted); }
 .think .think-body { border-left: 2px dotted var(--rule); padding: .1rem 0 .1rem .8rem; margin-top: .3rem; color: var(--muted); font-size: .82rem; }
 .think .think-body.folded { max-height: 9rem; }
 .picker select { font: inherit; font-size: .9rem; padding: .2rem .4rem; border: 1px solid var(--rule); background: transparent; }
@@ -349,3 +351,5 @@ button.show-s:hover { color: var(--accent, #333); }
 .made .k::after { content: ":"; }
 /* Wide preview images in the guide (assets/previews/): wider than the text column, centred. -- PI/Claude */
 .prose img[src*="assets/previews/"] { display: block; width: min(64rem, calc(100vw - 3rem)); max-width: none; height: auto; position: relative; left: 50%; transform: translateX(-50%); }
+/* Reference pages: source, word counts and condensed views under the title (the .facts line is hidden site-wide). -- PI/Claude */
+.titleblock .ref-links { font: .8rem "Source Sans 3", sans-serif; color: var(--muted); margin: .4rem 0; }

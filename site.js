@@ -54,6 +54,11 @@ if (picks.length) {
     const u = new URL(location); u.searchParams.set('a', a); u.searchParams.set('b', b); history.replaceState(null, '', u);
   };
   picks.forEach(s => s.addEventListener('change', apply));
+  // AI summary chips: show that model on the right (or the left, if it is already on the right)
+  document.querySelectorAll('.diff .chip[data-model]').forEach(c => c.addEventListener('click', () => {
+    const [a, b] = picks; if (b.value === c.dataset.model) a.value = c.dataset.model; else b.value = c.dataset.model; apply();
+    document.querySelector('.compare').scrollIntoView({behavior: 'smooth'});
+  }));
   apply();
 }
 
@@ -106,7 +111,8 @@ document.querySelectorAll('details.elide').forEach(d => addBar(d, () => { d.open
 document.querySelectorAll('.hide-s').forEach(h => {
   const b = document.createElement('button');
   b.className = 'show-s'; b.textContent = '[…]'; b.title = 'Show the hidden sentences';
-  b.addEventListener('click', () => { h.classList.add('shown'); b.remove(); });
+  const set = shown => { h.classList.toggle('shown', shown); b.textContent = shown ? '[−]' : '[…]'; b.title = shown ? 'Hide these sentences again' : 'Show the hidden sentences'; };
+  b.addEventListener('click', () => set(!h.classList.contains('shown')));
   h.before(b);
 });
 
