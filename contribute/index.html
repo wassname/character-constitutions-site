@@ -11,10 +11,10 @@
 <p><strong>An exploratory comparison of moral traditions as AI training targets.</strong> Until recently, training values in before post-training meant redoing the model's post-training, which usually only labs can do. <a href="https://arxiv.org/abs/2610.00767">Grafting</a> skips that step, bringing the cost to under $150 per constitution, so we can train the same model on many constitutions, Stoic, Buddhist, Christian and more, and compare them fairly. The question is out-of-distribution: which values carry over to dilemmas the model has never seen, and which only cover the cases they were written for?</p>
 <!-- First two sentences drafted by PI/Claude; quote from Li et al. 2026 §7, verbatim. -->
 <p>AI labs now train their models on written constitutions, yet decisions about what goes into them &quot;have largely been settled through philosophical argument&quot; (<a href="https://arxiv.org/abs/2605.02087">Li et al. 2026</a>). The field is pre-paradigm (Kuhn's term for a field that has not yet agreed on its methods), so this is exploratory work: a first rough map of where careful controlled studies would be worth doing. Unlike earlier work we use a very diverse range of contributed constitutions, test moral generalisation on challenging moral dilemmas, and have a novel training pipeline that can give some striking examples of character.</p>
-<p>The ask to contributors is to write a constitution and three test questions: a normal one, an unexpected one, and a totally unexpected one.</p>
+<p>The ask to contributors is to write a constitution, and optionally three test questions: a normal one, an unexpected one, and a totally unexpected one.</p>
 <p>What we ask of you:</p>
 <ul>
-<li>☐ Write a constitution and three test questions, and open a pull request (<a href="#how-it-works">how</a>)</li>
+<li>☐ Write a constitution (and optionally three test questions), and open a pull request (<a href="#how-it-works">how</a>)</li>
 <li>☐ Join the <a href="https://discord.gg/Er3BwQj5N">Discord</a> for questions and updates</li>
 </ul>
 <p>By contributing, you agree to the <a href="#guidelines">guidelines</a>.</p>
@@ -25,7 +25,7 @@
 <li>Get a <a href="https://github.com/signup">GitHub account</a> (free).</li>
 <li>Get an AI coding assistant (optional). We recommend <a href="https://opencode.ai/go">opencode Go</a>: it is cheap and offers Kimi, the AI that writes our training data.</li>
 <li>Email your GitHub username to <a href="mailto:michael.clark@wassname.org">michael.clark@wassname.org</a>. I'll invite you to the repository, which stays private until the study is published.</li>
-<li>Copy <a href="https://github.com/wassname/character-constitutions/tree/main/constitutions/_template"><code>constitutions/_template/</code></a> to <code>constitutions/&lt;your-name-for-it&gt;/</code> and fill it in. Add your three questions as <code>questions.yaml</code> in the same folder (<a href="#the-questions">format</a>).</li>
+<li>Copy <a href="https://github.com/wassname/character-constitutions/tree/main/constitutions/_template"><code>constitutions/_template/</code></a> to <code>constitutions/&lt;your-name-for-it&gt;/</code> and fill it in. If you wrote test questions, add them as <code>questions.yaml</code> in the same folder (<a href="#the-questions">format</a>).</li>
 <li>Open a pull request.</li>
 </ol>
 <p>Then my part:</p>
@@ -53,12 +53,12 @@
 <tr>
 <td style="text-align:left">Constitution</td>
 <td style="text-align:left">yes</td>
-<td style="text-align:left">2,000–12,000 words, in the first person, as the AI speaking about itself. Give the AI a name and say who made it (for example, you).</td>
+<td style="text-align:left">any length. What matters is that it covers the situations you care about (<a href="#the-constitution">tips</a>). In the first person, as the AI speaking about itself. Give the AI a name and say who made it (for example, you).</td>
 </tr>
 <tr>
 <td style="text-align:left">Three questions</td>
-<td style="text-align:left">yes</td>
-<td style="text-align:left">a normal one, an unexpected one and a novel one, each with a sentence or two on what a good answer does. More are welcome.</td>
+<td style="text-align:left">optional</td>
+<td style="text-align:left">a normal one, an unexpected one and a novel one, each with a sentence or two on what a good answer does. More are welcome. If you don't write them, I'll write some from your constitution.</td>
 </tr>
 <tr>
 <td style="text-align:left">Your intent</td>
