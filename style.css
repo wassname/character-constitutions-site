@@ -353,3 +353,10 @@ button.show-s:hover { color: var(--accent, #333); }
 .prose img[src*="assets/previews/"] { display: block; width: min(64rem, calc(100vw - 3rem)); max-width: none; height: auto; position: relative; left: 50%; transform: translateX(-50%); }
 /* Reference pages: source, word counts and condensed views under the title (the .facts line is hidden site-wide). -- PI/Claude */
 .titleblock .ref-links { font: .8rem "Source Sans 3", sans-serif; color: var(--muted); margin: .4rem 0; }
+/* Phones: the two replies stack, so each reply names its model, and the name stays in view while reading it. -- PI/Claude */
+.compare .col .who { display: none; }
+@media (max-width: 44rem) {
+  .compare .grid.heads { position: static; }
+  .compare .col .who { display: block; position: sticky; top: 0; z-index: 1; margin: 0 -1rem .5rem; padding: .35rem 1rem; background: var(--ink); color: var(--paper); font: 600 .8rem "Source Sans 3", sans-serif; letter-spacing: .02em; }
+  .compare .grid .col.msg-ai + .col.msg-ai, .compare .grid .col.msg-ai:not(:first-child) { margin-top: 1.4rem; }
+}
