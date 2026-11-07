@@ -260,7 +260,7 @@ What do you do?
 <li>small models (we target Qwen3.5-35B-A3B);</li>
 <li>smaller judges (Jev, a small model built for judging, or DeepSeek, with a rubric from Opus or a human).</li>
 </ul>
-<p>The study is self-funded by me, so contributors only need to give text. Offers of GPUs or sponsorship would let us use larger models and judges. If your org is interested in sponsoring, please let me know.</p>
+<p>The study is self-funded by me, so contributors only need to give text. Offers of GPUs or sponsorship would let us use larger models and judges, and try recursive teaching: a second round of grafting in which the trained model, not Kimi, writes its own training data. <!-- 'and try recursive teaching ...' drafted by PI/Claude 2026-11-07 --> If your org is interested in sponsoring, please let me know.</p>
 <p>We train <a href="https://huggingface.co/Qwen/Qwen3.5-35B-A3B">Qwen3.5-35B-A3B</a>, an open model much smaller than ChatGPT or Claude, with the same recipe and settings for every constitution (<a href="https://github.com/wassname/character-constitutions/blob/main/docs/recipe.md">recipe</a>). One constitution costs up to about $150 to train and test, allowing for each step to be run twice (an estimate; it may be revised). A judge model compares the trained model's replies with the untrained model's on about 90 general questions about character. It reads your whole constitution and a short guide that Claude Opus writes from it once, with example pairs. We also test maths and code, to see whether training damaged the model.</p>
 <h2 id="check-it-on-your-computer-optional">Check it on your computer (optional)</h2>
 <p>Run these yourself, or ask your AI assistant: &quot;Run <code>just check</code> on my constitution and preview the site.&quot;</p>
