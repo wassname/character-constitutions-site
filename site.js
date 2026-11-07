@@ -48,7 +48,7 @@ if (picks.length) {
     const [a, b] = picks.map(s => s.value), cmp = document.querySelector('.compare');
     cmp.querySelectorAll('.grid').forEach(g => {
       g.querySelectorAll('.col').forEach(c => c.hidden = true);
-      [a, b].forEach((m, i) => { const c = g.querySelector(`.col[data-model="${m}"]`); if (c) { c.hidden = false; c.style.order = i; } });
+      [a, b].forEach((m, i) => { const c = g.querySelector(`.col[data-model="${m}"]`); if (c) { c.hidden = false; c.style.order = i; c.dataset.slot = a === b ? '' : 'AB'[i]; } });
     });
     cmp.style.setProperty('--n', a === b ? 1 : 2);
     const u = new URL(location); u.searchParams.set('a', a); u.searchParams.set('b', b); history.replaceState(null, '', u);

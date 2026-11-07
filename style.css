@@ -360,3 +360,8 @@ button.show-s:hover { color: var(--accent, #333); }
   .compare .col .who { display: block; position: sticky; top: 0; z-index: 1; margin: 0 -1rem .5rem; padding: .35rem 1rem; background: var(--ink); color: var(--paper); font: 600 .8rem "Source Sans 3", sans-serif; letter-spacing: .02em; }
   .compare .grid .col.msg-ai + .col.msg-ai, .compare .grid .col.msg-ai:not(:first-child) { margin-top: 1.4rem; }
 }
+/* A/B: the pickers and every reply carry the same letter, so the order is clear when columns stack. -- PI/Claude */
+label.slot { font: 600 .8rem "Source Sans 3", sans-serif; color: var(--muted); white-space: nowrap; }
+.compare .col[data-slot="A"] .who::before, .compare .grid.heads .col[data-slot="A"] h4::before { content: "A · "; }
+.compare .col[data-slot="B"] .who::before, .compare .grid.heads .col[data-slot="B"] h4::before { content: "B · "; }
+@media (max-width: 44rem) { .picker .vs { display: none; } .picker label.slot { display: block; margin: .2rem 0; } }
